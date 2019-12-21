@@ -53,32 +53,32 @@ sb.set(font_scale=2)
 
 ## Среднее значение скорости для каждого типа
 
-dims = (11.7, 8.27)
+dims = (15.0, 10.0)
 fig, ax = plt.subplots(figsize=dims)
 BarT = sb.barplot(x='Type1', y='Speed', data=Poke, palette=type1_colours, ax=ax)
 BarT.set_xticklabels(BarT.get_xticklabels(), rotation=75, fontsize=11)
-BarT.set(xlabel='Speed means', ylabel='Quantity')
-BarT.set_title('Speed means')
+BarT.set(xlabel='Pokemon Types', ylabel='Quantity')
+BarT.set_title('Speed means', fontsize=20)
 FigBar = BarT.get_figure()
 FigBar.savefig("SpeedMeans.png")
 
 
-dims = (11.7, 8.27)
+dims = (15.0, 10.0)
 fig, ax = plt.subplots(figsize=dims)
 BarT = sb.barplot(x='Type1', y='Attack', data=Poke, palette=type1_colours, ax=ax)
 BarT.set_xticklabels(BarT.get_xticklabels(), rotation=75, fontsize=11)
-BarT.set(xlabel='Pokemon Attack', ylabel='Quantity')
-BarT.set_title('Attack means')
+BarT.set(xlabel='Pokemon Types', ylabel='Quantity')
+BarT.set_title('Attack means', fontsize=20)
 FigBar = BarT.get_figure()
 FigBar.savefig("AttackMeans.png")
 
 
-dims = (11.7, 8.27)
+dims = (15.0, 10.0)
 fig, ax = plt.subplots(figsize=dims)
 BarT = sb.barplot(x='Type1', y='Defense', data=Poke, palette=type1_colours, ax=ax)
 BarT.set_xticklabels(BarT.get_xticklabels(), rotation=75, fontsize=11)
-BarT.set(xlabel='Pokemon Defense', ylabel='Quantity')
-BarT.set_title('Defense means')
+BarT.set(xlabel='Pokemon Types', ylabel='Quantity')
+BarT.set_title('Defense means', fontsize=20)
 FigBar = BarT.get_figure()
 FigBar.savefig("DefenseMeans.png")
 
@@ -125,79 +125,46 @@ AttvTot.savefig("Two-dimensional distribution Attack and Speed.png")
 # plt.ylabel('Speed', fontsize=18)
 # AttvDef.savefig("Types & Speed.png")
 
-
-dims = (11.7, 8.27)
-fig, ax = plt.subplots(figsize=dims)
-vp = sb.violinplot(x='Generation', y='Total', data=Poke, ax=ax)
-plt.title('Violin plot of Generation base stat total', fontsize=18)
-plt.xlabel('Generation', fontsize=12)
-plt.ylabel('Total', fontsize=12)
-figVP = vp.get_figure()
-figVP.savefig("Violin_Gen.png")
-
-
-dims = (11.7, 8.27)
-fig, ax = plt.subplots(figsize=dims)
-bp = sb.boxplot(x='Generation', y='Total', data=Poke, ax=ax)
-plt.title('Box plot of Generation base stat total', fontsize=18)
-plt.xlabel('Generation', fontsize=12)
-plt.ylabel('Total', fontsize=12)
-figBP = bp.get_figure()
-figBP.savefig("Box_Gen.png")
-
-
+dims=(15.0, 10.0)
 fig, ax = plt.subplots(figsize=dims)
 TySplit = [Poke['Type1'].count() - Poke['Type2'].count(), Poke['Type2'].count()]
 TypePie = plt.pie(TySplit, labels=['Primary only', 'Primary and Secondary'], autopct='%1.1f%%', radius=1.1,
                   startangle=90,
                   shadow=False, explode=(0, 0))
-plt.title('Single Type vs Dual Type Pokemon', fontsize=12)
+plt.title('Single Type vs Dual Type Pokemon', fontsize=18)
 plt.savefig("TypePie.png")
 
 Type1 = pd.value_counts(Poke['Type1'])
 
-dims = (11.7, 8.27)
+dims = (15, 10)
 fig, ax = plt.subplots(figsize=dims)
 BarT = sb.barplot(x=Type1.index, y=Type1, data=Poke, palette=type1_colours, ax=ax)
-BarT.set_xticklabels(BarT.get_xticklabels(), rotation=75, fontsize=12)
+BarT.set_xticklabels(BarT.get_xticklabels(), rotation=75, fontsize=11)
 BarT.set(xlabel='Pokemon Primary Types', ylabel='Quantity')
-BarT.set_title('Distribution of Primary Pokemon Types')
+BarT.set_title('Distribution of Primary Pokemon Types', fontsize=20)
 FigBar = BarT.get_figure()
 FigBar.savefig("Primary types distribution.png")
 
-
-
 QE = Poke[['Type1', 'Attack', 'Defense']]
-
-
-dims = (11.7, 8.27)
-fig, ax = plt.subplots()
-BarT = sb.catplot(x="Attack", y="Type1", data=QE, palette=type2_colours, ax=ax)
-
-BarT.savefig("Test.png")
-
-
 
 Type2 = pd.value_counts(Poke['Type2'])
 
-print("type2: ", Type2)
-
-dims = (11.7, 8.27)
-fig, ax = plt.subplots()
+dims = (15.0, 10.0)
+fig, ax = plt.subplots(figsize=dims)
 BarT = sb.barplot(x=Type2.index, y=Type2, data=Poke, palette=type2_colours, ax=ax)
-BarT.set_xticklabels(BarT.get_xticklabels(), rotation=75, fontsize=12)
+BarT.set_xticklabels(BarT.get_xticklabels(), rotation=75, fontsize=11)
 BarT.set(xlabel='Pokemon Secondary Types', ylabel='Freq')
-BarT.set_title('Distribution of Secondary Pokemon Types')
+BarT.set_title('Distribution of Secondary Pokemon Types', fontsize=18)
 FigBar = BarT.get_figure()
 FigBar.savefig("Secondary types distribution.png")
 
 LSplit = [Poke['Name'].count(), PokeL['Name'].count()]
 fig, ax = plt.subplots()
-LegendPie = plt.pie(LSplit, labels=['Not Legendary', 'Legendary'], autopct='%1.1f%%', shadow=True, startangle=90,
-                    explode=(0, 0.1))
-plt.title('Legendary Split', fontsize=12)
+LegendPie = plt.pie(LSplit, labels=['Not Legendary', 'Legendary'], autopct='%1.1f%%', shadow=False, startangle=90,
+                    explode=(0, 0))
+plt.title('Legendary Split', fontsize=20)
 fig = plt.gcf()
-fig.set_size_inches(11.7, 8.27)
+fig.set_size_inches(15, 10)
 plt.savefig("LegendPie.png")
 
 
@@ -222,13 +189,6 @@ CorrelationMap.set(title='HeatMap to show Correlation between Base Stats')
 FigMap = CorrelationMap.get_figure()
 FigMap.savefig("HeatMapCorr.png")
 
-dims = (11.7, 8.27)
-fig, ax = plt.subplots(figsize=dims)
-Atthist = sb.distplot(Poke['Attack'], color='r', hist=False, ax=ax)
-SpAhist = sb.distplot(Poke['Sp.Atk'], color='b', hist=False, ax=ax)
-SpAhist.set(title='Distribution of Attack and Sp.Atk', xlabel='Attack:r , Sp.Atk:b')
-FigHist = SpAhist.get_figure()
-FigHist.savefig("Hist.png")
 
 DS = Corr.describe()
 print("\n MEANS OF MAIN DESCRIPTIONS")
