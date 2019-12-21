@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e65c03f6-7fb1-4450-8397-747f192d0b23" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/Python.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Box_Gen.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HeatMapCorr.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Hist.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LegendPie.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MinMax.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Plots.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Poke.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Primary types distribution.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SP_AttvsDef.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Secondary types distribution.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Top10.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Two-dimensional distribution Attack and Sp.Atk.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Two-dimensional distribution Attack and Speed.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Two-dimensional distribution Defense and Sp.Def.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TypePie.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Types &amp; Speed.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Violin_Gen.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Weakness.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data.csv" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="ProjectId" id="1VDMoc6W0SSbfgRjIYsr9gtiUO0" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="C:/Program Files/Git/bin/git.exe" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Plots" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="Python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\lopas\Anaconda3\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Plots.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e65c03f6-7fb1-4450-8397-747f192d0b23" name="Default Changelist" comment="" />
+      <created>1576783387374</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1576783387374</updated>
+      <workItem from="1576783389739" duration="12687000" />
+      <workItem from="1576941409947" duration="2411000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Python$Plots.coverage" NAME="Plots Coverage Results" MODIFIED="1576943899319" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>
