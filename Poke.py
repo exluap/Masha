@@ -23,8 +23,12 @@ PokeL = All.loc[(All['Legendary']==True)]
 # Save all values to key-value map for next using in Plots
 KeyValueMap = {}
 Speed = frame.loc[ : , ['Type1', 'Speed']]
-Speed.drop(["#"],axis='columns')
+Speed.to_string(index=False)
+
 SelectedType = Speed.loc[(Speed['Type1'].str.contains('Grass') == True)]
+
+print(Speed)
+
 
 for speed in SelectedType['Speed']:
     print("Speed: ", speed)
@@ -38,3 +42,18 @@ Gen3 = Poke.loc[Poke['Generation'] == 3]
 Gen4 = Poke.loc[Poke['Generation'] == 4]
 Gen5 = Poke.loc[Poke['Generation'] == 5]
 Gen6 = Poke.loc[Poke['Generation'] == 6]
+
+
+# Вывод 3 топ самых быстрых
+
+Top3Max = frame.loc[: , ['Name', 'Speed']]
+
+print("TOP 3 the Fastest")
+print(Top3Max.nlargest(3, 'Speed'))
+
+# TOP 10 HP
+
+Top10Max = frame.loc[: , ['Name', 'HP']]
+
+print("\n TOP 10 of Healthiest")
+print(Top10Max.nlargest(10, 'HP'))

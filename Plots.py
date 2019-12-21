@@ -1,6 +1,7 @@
 import matplotlib
 import matplotlib.pyplot as plt
 import pandas as pd
+from pandas import concat
 
 from Poke import Poke, PokeL, frame
 import seaborn as sb
@@ -50,7 +51,7 @@ type2_colours = ['#78C850',  # None
 ########## Сравниваем атаку и защиту по сравнению с доп параметрами ########
 sb.set()
 AttvTot = sb.lmplot(x='Attack', y='Sp.Atk', data=Poke,
-                    fit_reg=False, size=9, aspect=1)
+                    fit_reg=False, height=9, aspect=1)
 plt.ylim(0, 150)
 plt.xlim(0, 175)
 plt.title('Attack and Sp.Atk', fontsize=25)
@@ -60,7 +61,7 @@ AttvTot.savefig("Two-dimensional distribution Attack and Sp.Atk.png")
 
 sb.set()
 AttvTot = sb.lmplot(x='Defense', y='Sp.Def', data=Poke,
-                    fit_reg=False, size=9, aspect=1)
+                    fit_reg=False, height=9, aspect=1)
 plt.ylim(0, 175)
 plt.xlim(0, 200)
 plt.title('Defense and Sp.Defense', fontsize=25)
@@ -70,7 +71,7 @@ AttvTot.savefig("Two-dimensional distribution Defense and Sp.Def.png")
 
 sb.set()
 AttvTot = sb.lmplot(x='Attack', y='Speed', data=Poke,
-                    fit_reg=False, size=9, aspect=1)
+                    fit_reg=False, height=9, aspect=1)
 plt.ylim(0, 175)
 plt.xlim(0, 175)
 plt.title('Attack and Speed', fontsize=25)
@@ -78,17 +79,15 @@ plt.xlabel('Attack', fontsize=18)
 plt.ylabel('Speed', fontsize=18)
 AttvTot.savefig("Two-dimensional distribution Attack and Speed.png")
 
-
 sb.set()
 
-
-#sb.set()
-#AttvDef = sb.lmplot(x='Speed', y='Type1', data=Poke,
+# sb.set()
+# AttvDef = sb.lmplot(x='Speed', y='Type1', data=Poke,
 #                    fit_reg=False, size=9, aspect=1)
-#plt.title('Primary types and speed', fontsize=25)
-#plt.xlabel('Types', fontsize=18)
-#plt.ylabel('Speed', fontsize=18)
-#AttvDef.savefig("Types & Speed.png")
+# plt.title('Primary types and speed', fontsize=25)
+# plt.xlabel('Types', fontsize=18)
+# plt.ylabel('Speed', fontsize=18)
+# AttvDef.savefig("Types & Speed.png")
 
 sb.set()
 dims = (11.7, 8.27)
@@ -113,7 +112,8 @@ figBP.savefig("Box_Gen.png")
 sb.set()
 fig, ax = plt.subplots(figsize=dims)
 TySplit = [Poke['Type1'].count() - Poke['Type2'].count(), Poke['Type2'].count()]
-TypePie = plt.pie(TySplit, labels=['Primary only', 'Primary and Secondary'], autopct='%1.1f%%', radius=1.1, startangle=90,
+TypePie = plt.pie(TySplit, labels=['Primary only', 'Primary and Secondary'], autopct='%1.1f%%', radius=1.1,
+                  startangle=90,
                   shadow=False, explode=(0, 0))
 plt.title('Single Type vs Dual Type Pokemon', fontsize=18)
 plt.savefig("TypePie.png")
@@ -129,8 +129,13 @@ BarT.set_title('Distribution of Primary Pokemon Types')
 FigBar = BarT.get_figure()
 FigBar.savefig("Primary types distribution.png")
 
-##########for row in Poke.loc[Poke.Type2.isnull(), 'Type2'].index:
-##########    Poke.at[row, 'Type2'] = 'None'
+
+sb.set()
+QE = Poke[['Defense', 'Attack', 'Speed', 'Type1']]
+
+for name, group in QE.groupby(['Type1']):
+    print("Speed: ", group.Speed.values)
+    print("Type: ", group.Type1.values)
 
 
 
@@ -138,13 +143,13 @@ Type2 = pd.value_counts(Poke['Type2'])
 sb.set()
 dims = (11.7, 8.27)
 fig, ax = plt.subplots()
+pg = pd.concat()
 BarT = sb.barplot(x=Type2.index, y=Type2, data=Poke, palette=type2_colours, ax=ax)
 BarT.set_xticklabels(BarT.get_xticklabels(), rotation=75, fontsize=12)
 BarT.set(xlabel='Pokemon Secondary Types', ylabel='Freq')
 BarT.set_title('Distribution of Secondary Pokemon Types')
 FigBar = BarT.get_figure()
 FigBar.savefig("Secondary types distribution.png")
-
 
 LSplit = [Poke['Name'].count(), PokeL['Name'].count()]
 LegendPie = plt.pie(LSplit, labels=['Not Legendary', 'Legendary'], autopct='%1.1f%%', shadow=True, startangle=90,
@@ -173,4 +178,17 @@ FigHist = SpAhist.get_figure()
 FigHist.savefig("Hist.png")
 
 DS = Corr.describe()
-print(DS)
+print("\n MEANS OF MAIN DESCRIPTIONS")
+print(DS.mean())
+
+EQ = Poke[['Type1', 'Defense', 'Attack']]
+
+EQ = EQ.loc[(EQ['Defense'] - EQ['Attack'] < 10)]
+#print(EQ)
+
+print("\n Types in which defense approximately equal attack")
+print(EQ['Type1'].value_counts())
+
+TopTotal = Poke[['Name', 'Total']]
+print("\n THE BEST OF THE BEST TOTAL POKEMON")
+print(TopTotal.nlargest(1, 'Total'))
