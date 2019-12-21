@@ -166,7 +166,7 @@ plt.savefig("LegendPie.png")
 
 GenSplit = [Gen1['Type1'].count(), Gen2['Type1'].count(), Gen3['Type1'].count(), Gen4['Type1'].count(), Gen5['Type1'].count(), Gen6['Type1'].count()]
 fig, ax = plt.subplots()
-GenPie = plt.pie(GenSplit, labels=["1", "2", "3", "4", "5", "6"], autopct='%1.1f%%', shadow=True, startangle=90)
+GenPie = plt.pie(GenSplit, labels=["1", "2", "3", "4", "5", "6"], autopct='%1.1f%%', shadow=False, startangle=90)
 plt.title('Generation Split', fontsize=12)
 fig = plt.gcf()
 fig.set_size_inches(11.7, 8.27)
