@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from pandas import concat
 
-from Poke import Poke, PokeL, frame
+from Poke import Poke, PokeL, frame, Gen1, Gen2, Gen3, Gen4, Gen5, Gen6
 import seaborn as sb
 
 # Для каждого основного умения свой цвет
@@ -131,17 +131,14 @@ FigBar.savefig("Primary types distribution.png")
 
 
 
-QE = Poke.groupby(['Type1'])
+QE = Poke[['Type1', 'Attack', 'Defense']]
 
 sb.set()
 dims = (11.7, 8.27)
 fig, ax = plt.subplots()
-BarT = sb.catplot(x="Type1", y="Defense", data=QE, palette=type2_colours, ax=ax)
-BarT.set_xticklabels(BarT.get_xticklabels(), rotation=75, fontsize=12)
-BarT.set(xlabel='Pokemon Secondary Types', ylabel='Freq')
-BarT.set_title('Distribution of Secondary Pokemon Types')
-FigBar = BarT.get_figure()
-FigBar.savefig("Test.png")
+BarT = sb.catplot(x="Attack", y="Type1", data=QE, palette=type2_colours, ax=ax)
+
+BarT.savefig("Test.png")
 
 
 
@@ -157,12 +154,24 @@ FigBar = BarT.get_figure()
 FigBar.savefig("Secondary types distribution.png")
 
 LSplit = [Poke['Name'].count(), PokeL['Name'].count()]
+fig, ax = plt.subplots()
 LegendPie = plt.pie(LSplit, labels=['Not Legendary', 'Legendary'], autopct='%1.1f%%', shadow=True, startangle=90,
                     explode=(0, 0.1))
 plt.title('Legendary Split', fontsize=12)
 fig = plt.gcf()
 fig.set_size_inches(11.7, 8.27)
 plt.savefig("LegendPie.png")
+
+
+
+GenSplit = [Gen1['Type1'].count(), Gen2['Type1'].count(), Gen3['Type1'].count(), Gen4['Type1'].count(), Gen5['Type1'].count(), Gen6['Type1'].count()]
+fig, ax = plt.subplots()
+GenPie = plt.pie(GenSplit, labels=["1", "2", "3", "4", "5", "6"], autopct='%1.1f%%', shadow=True, startangle=90)
+plt.title('Generation Split', fontsize=12)
+fig = plt.gcf()
+fig.set_size_inches(11.7, 8.27)
+plt.savefig("GenerationPie.png")
+
 
 Corr = Poke[['Total', 'HP', 'Attack', 'Defense', 'Sp.Atk', 'Sp.Def', 'Speed']]
 
