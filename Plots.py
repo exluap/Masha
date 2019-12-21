@@ -130,12 +130,18 @@ FigBar = BarT.get_figure()
 FigBar.savefig("Primary types distribution.png")
 
 
-sb.set()
-QE = Poke[['Defense', 'Attack', 'Speed', 'Type1']]
 
-for name, group in QE.groupby(['Type1']):
-    print("Speed: ", group.Speed.values)
-    print("Type: ", group.Type1.values)
+QE = Poke.groupby(['Type1'])
+
+sb.set()
+dims = (11.7, 8.27)
+fig, ax = plt.subplots()
+BarT = sb.catplot(x="Type1", y="Defense", data=QE, palette=type2_colours, ax=ax)
+BarT.set_xticklabels(BarT.get_xticklabels(), rotation=75, fontsize=12)
+BarT.set(xlabel='Pokemon Secondary Types', ylabel='Freq')
+BarT.set_title('Distribution of Secondary Pokemon Types')
+FigBar = BarT.get_figure()
+FigBar.savefig("Test.png")
 
 
 
@@ -143,7 +149,6 @@ Type2 = pd.value_counts(Poke['Type2'])
 sb.set()
 dims = (11.7, 8.27)
 fig, ax = plt.subplots()
-pg = pd.concat()
 BarT = sb.barplot(x=Type2.index, y=Type2, data=Poke, palette=type2_colours, ax=ax)
 BarT.set_xticklabels(BarT.get_xticklabels(), rotation=75, fontsize=12)
 BarT.set(xlabel='Pokemon Secondary Types', ylabel='Freq')

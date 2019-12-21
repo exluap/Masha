@@ -2,23 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e65c03f6-7fb1-4450-8397-747f192d0b23" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Box_Gen.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HeatMapCorr.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hist.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LegendPie.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Plots.py" beforeDir="false" afterPath="$PROJECT_DIR$/Plots.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poke.py" beforeDir="false" afterPath="$PROJECT_DIR$/Poke.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Primary types distribution.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SP_AttvsDef.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Secondary types distribution.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Two-dimensional distribution Attack and Sp.Atk.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Two-dimensional distribution Attack and Speed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Two-dimensional distribution Defense and Sp.Def.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TypePie.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Types &amp; Speed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Violin_Gen.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +27,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="GO_FMT" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -49,7 +35,7 @@
     <property name="go.import.settings.migrated" value="true" />
     <property name="ignore_missing_gitignore" value="true" />
     <property name="last_opened_file_path" value="C:/Program Files/Git/bin/git.exe" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RunManager">
@@ -110,8 +96,16 @@
       <updated>1576783387374</updated>
       <workItem from="1576783389739" duration="12687000" />
       <workItem from="1576941409947" duration="2411000" />
-      <workItem from="1576944230063" duration="6296000" />
+      <workItem from="1576944230063" duration="10895000" />
     </task>
+    <task id="LOCAL-00001" summary="fd">
+      <created>1576950579528</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1576950579528</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -130,6 +124,10 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fd" />
+    <option name="LAST_COMMIT_MESSAGE" value="fd" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="415" y="36" key="#Plots" timestamp="1576944336833">
       <screen x="0" y="23" width="1440" height="820" />
@@ -139,29 +137,45 @@
       <screen x="0" y="23" width="1440" height="820" />
     </state>
     <state x="184" y="95" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.820@0.23.1440.820" timestamp="1576944356052" />
-    <state width="1398" height="211" key="GridCell.Tab.0.bottom" timestamp="1576950481585">
+    <state x="303" y="35" key="CommitChangelistDialog2" timestamp="1576950579334">
       <screen x="0" y="23" width="1440" height="820" />
     </state>
-    <state width="1398" height="211" key="GridCell.Tab.0.bottom/0.23.1440.820@0.23.1440.820" timestamp="1576950481585" />
-    <state width="1398" height="211" key="GridCell.Tab.0.center" timestamp="1576950481584">
+    <state x="303" y="35" key="CommitChangelistDialog2/0.23.1440.820@0.23.1440.820" timestamp="1576950579334" />
+    <state width="1398" height="211" key="GridCell.Tab.0.bottom" timestamp="1576955452334">
       <screen x="0" y="23" width="1440" height="820" />
     </state>
-    <state width="1398" height="211" key="GridCell.Tab.0.center/0.23.1440.820@0.23.1440.820" timestamp="1576950481584" />
-    <state width="1398" height="211" key="GridCell.Tab.0.left" timestamp="1576950481584">
+    <state width="1398" height="211" key="GridCell.Tab.0.bottom/0.23.1440.820@0.23.1440.820" timestamp="1576955452334" />
+    <state width="1398" height="211" key="GridCell.Tab.0.center" timestamp="1576955452334">
       <screen x="0" y="23" width="1440" height="820" />
     </state>
-    <state width="1398" height="211" key="GridCell.Tab.0.left/0.23.1440.820@0.23.1440.820" timestamp="1576950481584" />
-    <state width="1398" height="211" key="GridCell.Tab.0.right" timestamp="1576950481585">
+    <state width="1398" height="211" key="GridCell.Tab.0.center/0.23.1440.820@0.23.1440.820" timestamp="1576955452334" />
+    <state width="1398" height="211" key="GridCell.Tab.0.left" timestamp="1576955452334">
       <screen x="0" y="23" width="1440" height="820" />
     </state>
-    <state width="1398" height="211" key="GridCell.Tab.0.right/0.23.1440.820@0.23.1440.820" timestamp="1576950481585" />
+    <state width="1398" height="211" key="GridCell.Tab.0.left/0.23.1440.820@0.23.1440.820" timestamp="1576955452334" />
+    <state width="1398" height="211" key="GridCell.Tab.0.right" timestamp="1576955452334">
+      <screen x="0" y="23" width="1440" height="820" />
+    </state>
+    <state width="1398" height="211" key="GridCell.Tab.0.right/0.23.1440.820@0.23.1440.820" timestamp="1576955452334" />
+    <state x="221" y="72" key="SettingsEditor" timestamp="1576951653416">
+      <screen x="0" y="23" width="1440" height="820" />
+    </state>
+    <state x="221" y="72" key="SettingsEditor/0.23.1440.820@0.23.1440.820" timestamp="1576951653416" />
+    <state x="320" y="173" key="Vcs.Push.Dialog.v2" timestamp="1576950581292">
+      <screen x="0" y="23" width="1440" height="820" />
+    </state>
+    <state x="320" y="173" key="Vcs.Push.Dialog.v2/0.23.1440.820@0.23.1440.820" timestamp="1576950581292" />
     <state x="378" y="195" width="683" height="476" key="find.popup" timestamp="1576945262022">
       <screen x="0" y="23" width="1440" height="820" />
     </state>
     <state x="378" y="195" width="683" height="476" key="find.popup/0.23.1440.820@0.23.1440.820" timestamp="1576945262022" />
+    <state x="385" y="167" width="670" height="676" key="search.everywhere.popup" timestamp="1576954643888">
+      <screen x="0" y="23" width="1440" height="820" />
+    </state>
+    <state x="385" y="167" width="670" height="676" key="search.everywhere.popup/0.23.1440.820@0.23.1440.820" timestamp="1576954643888" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/masha$Plots.coverage" NAME="Plots Coverage Results" MODIFIED="1576950481576" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/masha$Plots.coverage" NAME="Plots Coverage Results" MODIFIED="1576955452326" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Python$Plots.coverage" NAME="Plots Coverage Results" MODIFIED="1576943899319" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
