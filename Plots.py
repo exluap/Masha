@@ -48,8 +48,15 @@ type2_colours = ['#78C850',  # None
                  '#A8B820',  # Bug
                  ]
 
+sb.set(font_scale=2)
+
+
+## Среднее значение скорости для каждого типа
+
+
+
 ########## Сравниваем атаку и защиту по сравнению с доп параметрами ########
-sb.set()
+
 AttvTot = sb.lmplot(x='Attack', y='Sp.Atk', data=Poke,
                     fit_reg=False, height=9, aspect=1)
 plt.ylim(0, 150)
@@ -59,7 +66,7 @@ plt.xlabel('Attack', fontsize=18)
 plt.ylabel('Sp.Atk', fontsize=18)
 AttvTot.savefig("Two-dimensional distribution Attack and Sp.Atk.png")
 
-sb.set()
+
 AttvTot = sb.lmplot(x='Defense', y='Sp.Def', data=Poke,
                     fit_reg=False, height=9, aspect=1)
 plt.ylim(0, 175)
@@ -69,7 +76,7 @@ plt.xlabel('Defense', fontsize=18)
 plt.ylabel('Sp.Def', fontsize=18)
 AttvTot.savefig("Two-dimensional distribution Defense and Sp.Def.png")
 
-sb.set()
+
 AttvTot = sb.lmplot(x='Attack', y='Speed', data=Poke,
                     fit_reg=False, height=9, aspect=1)
 plt.ylim(0, 175)
@@ -79,9 +86,9 @@ plt.xlabel('Attack', fontsize=18)
 plt.ylabel('Speed', fontsize=18)
 AttvTot.savefig("Two-dimensional distribution Attack and Speed.png")
 
-sb.set()
 
-# sb.set()
+
+#
 # AttvDef = sb.lmplot(x='Speed', y='Type1', data=Poke,
 #                    fit_reg=False, size=9, aspect=1)
 # plt.title('Primary types and speed', fontsize=25)
@@ -89,7 +96,7 @@ sb.set()
 # plt.ylabel('Speed', fontsize=18)
 # AttvDef.savefig("Types & Speed.png")
 
-sb.set()
+
 dims = (11.7, 8.27)
 fig, ax = plt.subplots(figsize=dims)
 vp = sb.violinplot(x='Generation', y='Total', data=Poke, ax=ax)
@@ -99,7 +106,7 @@ plt.ylabel('Total', fontsize=12)
 figVP = vp.get_figure()
 figVP.savefig("Violin_Gen.png")
 
-sb.set()
+
 dims = (11.7, 8.27)
 fig, ax = plt.subplots(figsize=dims)
 bp = sb.boxplot(x='Generation', y='Total', data=Poke, ax=ax)
@@ -109,17 +116,17 @@ plt.ylabel('Total', fontsize=12)
 figBP = bp.get_figure()
 figBP.savefig("Box_Gen.png")
 
-sb.set()
+
 fig, ax = plt.subplots(figsize=dims)
 TySplit = [Poke['Type1'].count() - Poke['Type2'].count(), Poke['Type2'].count()]
 TypePie = plt.pie(TySplit, labels=['Primary only', 'Primary and Secondary'], autopct='%1.1f%%', radius=1.1,
                   startangle=90,
                   shadow=False, explode=(0, 0))
-plt.title('Single Type vs Dual Type Pokemon', fontsize=18)
+plt.title('Single Type vs Dual Type Pokemon', fontsize=12)
 plt.savefig("TypePie.png")
 
 Type1 = pd.value_counts(Poke['Type1'])
-sb.set()
+
 dims = (11.7, 8.27)
 fig, ax = plt.subplots(figsize=dims)
 BarT = sb.barplot(x=Type1.index, y=Type1, data=Poke, palette=type1_colours, ax=ax)
@@ -133,7 +140,7 @@ FigBar.savefig("Primary types distribution.png")
 
 QE = Poke[['Type1', 'Attack', 'Defense']]
 
-sb.set()
+
 dims = (11.7, 8.27)
 fig, ax = plt.subplots()
 BarT = sb.catplot(x="Attack", y="Type1", data=QE, palette=type2_colours, ax=ax)
@@ -143,7 +150,9 @@ BarT.savefig("Test.png")
 
 
 Type2 = pd.value_counts(Poke['Type2'])
-sb.set()
+
+print("type2: ", Type2)
+
 dims = (11.7, 8.27)
 fig, ax = plt.subplots()
 BarT = sb.barplot(x=Type2.index, y=Type2, data=Poke, palette=type2_colours, ax=ax)
@@ -166,16 +175,17 @@ plt.savefig("LegendPie.png")
 
 GenSplit = [Gen1['Type1'].count(), Gen2['Type1'].count(), Gen3['Type1'].count(), Gen4['Type1'].count(), Gen5['Type1'].count(), Gen6['Type1'].count()]
 fig, ax = plt.subplots()
-GenPie = plt.pie(GenSplit, labels=["1", "2", "3", "4", "5", "6"], autopct='%1.1f%%', shadow=False, startangle=90)
+GenPie = plt.pie(GenSplit, labels=["First generation", "Secondary Generation", "Third Generation", "Fourth Generation", "Fith Generation", "Six Generation"], autopct='%1.1f%%', shadow=False, startangle=90)
 plt.title('Generation Split', fontsize=12)
 fig = plt.gcf()
 fig.set_size_inches(11.7, 8.27)
 plt.savefig("GenerationPie.png")
 
+SpeedMean = Poke[['Type1', 'Speed']]
 
 Corr = Poke[['Total', 'HP', 'Attack', 'Defense', 'Sp.Atk', 'Sp.Def', 'Speed']]
 
-sb.set()
+
 dims = (11.7, 8.27)
 fig, ax = plt.subplots(figsize=dims)
 CorrelationMap = sb.heatmap(Corr.corr(), annot=True, ax=ax)
