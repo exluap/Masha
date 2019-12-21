@@ -53,6 +53,35 @@ sb.set(font_scale=2)
 
 ## Среднее значение скорости для каждого типа
 
+dims = (11.7, 8.27)
+fig, ax = plt.subplots(figsize=dims)
+BarT = sb.barplot(x='Type1', y='Speed', data=Poke, palette=type1_colours, ax=ax)
+BarT.set_xticklabels(BarT.get_xticklabels(), rotation=75, fontsize=11)
+BarT.set(xlabel='Speed means', ylabel='Quantity')
+BarT.set_title('Speed means')
+FigBar = BarT.get_figure()
+FigBar.savefig("SpeedMeans.png")
+
+
+dims = (11.7, 8.27)
+fig, ax = plt.subplots(figsize=dims)
+BarT = sb.barplot(x='Type1', y='Attack', data=Poke, palette=type1_colours, ax=ax)
+BarT.set_xticklabels(BarT.get_xticklabels(), rotation=75, fontsize=11)
+BarT.set(xlabel='Pokemon Attack', ylabel='Quantity')
+BarT.set_title('Attack means')
+FigBar = BarT.get_figure()
+FigBar.savefig("AttackMeans.png")
+
+
+dims = (11.7, 8.27)
+fig, ax = plt.subplots(figsize=dims)
+BarT = sb.barplot(x='Type1', y='Defense', data=Poke, palette=type1_colours, ax=ax)
+BarT.set_xticklabels(BarT.get_xticklabels(), rotation=75, fontsize=11)
+BarT.set(xlabel='Pokemon Defense', ylabel='Quantity')
+BarT.set_title('Defense means')
+FigBar = BarT.get_figure()
+FigBar.savefig("DefenseMeans.png")
+
 
 
 ########## Сравниваем атаку и защиту по сравнению с доп параметрами ########
