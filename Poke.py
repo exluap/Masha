@@ -27,11 +27,8 @@ Speed.to_string(index=False)
 
 SelectedType = Speed.loc[(Speed['Type1'].str.contains('Grass') == True)]
 
-print(Speed)
-
-
-for speed in SelectedType['Speed']:
-    print("Speed: ", speed)
+#for speed in SelectedType['Speed']:
+#    print("Speed: ", speed)
 
 Poke['Type1'].count() - Poke['Type2'].count() #  Считаем покемонов только с основным типом
 
